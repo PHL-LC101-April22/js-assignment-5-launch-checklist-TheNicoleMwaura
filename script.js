@@ -4,14 +4,13 @@
 
 window.addEventListener("load", function() {
 
- const { myFetch, formSubmission, pickPlanet, addDestinationInfo } = require("./scriptHelper");
+ //const { myFetch, formSubmission, pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
     let form = document.querySelector("form");
 
     form.addEventListener("submit", function(event){
 
         event.preventDefault();
-
         let pilotName = document.querySelector("input[name=pilotName]");
         let pilot = pilotName.value;
 
@@ -19,20 +18,21 @@ window.addEventListener("load", function() {
         let copilot = copilotName.value;
 
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
-        let fuel = fuelLevel.value;
+        let fuel = Number(fuelLevel.value);
 
         let cargoMass = document.querySelector("input[name=cargoMass]");
-        let cargo = cargoMass.value;
+        let cargo = Number(cargoMass.value);
 
         let list = document.getElementById("faultyItems");
         
-
-
-       /* if(pilotName.value===""|| copilotName.value==="" || fuelLevel==="" ||cargoMass===""){
-            alert("All fields are required!")
-            
-        }*/
-
+ 
+        if(pilotName.value===""|| copilotName.value==="" || fuelLevel==="" ||cargoMass===""){
+            alert("All fields are required!");
+            event.preventDefault();
+           
+        }
+        
+ 
         formSubmission(document, list, pilot, copilot, fuel, cargo );
 
 
@@ -54,7 +54,7 @@ window.addEventListener("load", function() {
          planet.distance, planet.moon, planet.image);
         
  
-    })
+    }) 
  
    
 });
