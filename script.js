@@ -26,8 +26,8 @@ window.addEventListener("load", function() {
         let list = document.getElementById("faultyItems");
         
  
-        if(pilotName.value===""|| copilotName.value==="" || fuelLevel==="" ||cargoMass===""){
-            alert("All fields are required!");
+        if(pilotName.value===""|| copilotName.value==="" || fuelLevel.value==="" ||cargoMass.value===""){
+             return galert("All fields are required!");
             event.preventDefault();
            
         }
