@@ -27,7 +27,7 @@ window.addEventListener("load", function() {
         
  
         if(pilotName.value===""|| copilotName.value==="" || fuelLevel.value==="" ||cargoMass.value===""){
-             return galert("All fields are required!");
+             return alert("All fields are required!");
             event.preventDefault();
            
         }
